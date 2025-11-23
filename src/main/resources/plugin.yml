@@ -1,0 +1,27 @@
+name: VoteServerStop
+version: 2.0-RELEASE
+main: VoteServerStop
+description: 投票关闭服务器插件
+author: System
+commands:
+  votestop:
+    description: 发起关闭服务器投票
+    usage: /votestop [时间(秒)]
+    permission: voteserverstop.use
+  vote:
+    description: 参与投票
+    usage: /vote <OK|NO>
+    permission: voteserverstop.use
+  voteserverstop:
+    description: 管理VoteServerStop插件
+    usage: /voteserverstop <reload|disable|enable>
+    permission: voteserverstop.admin
+permissions:
+  voteserverstop.use:
+    description: 允许使用投票功能
+    default: true
+  voteserverstop.admin:
+    description: 允许设置30秒以下的投票时间
+    default: op
+    children:
+      voteserverstop.use: true
